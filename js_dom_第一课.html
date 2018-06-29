@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dom第一课</title>
+    <style type="text/css">
+    .h1style {
+        width: 150px;
+        height: 250px;
+        font-size: 0.5cm;
+        /*background-color: red;*/
+        color: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 测试p标签 id: p_id -->
+    <p id="p_id">这是P标签的原来的内容！</p>
+    <script type="text/javascript">
+    var p_ob = document.getElementById('p_id');
+    // alert(p_ob.innerHTML);
+    p_ob.innerHTML = "p标签的新值是：new!!!!";
+    // document.write(p_ob.innerHTML="new!!!!");
+    </script>
+    <p>Hello World!</p>
+    <div id="main">
+        <p>The DOM is very useful.</p>
+        <p>本例演示 <b>getElementsByTagName</b> 方法。</p>
+    </div>
+    <!-- div组标签，下面的p标签，可以用数组区分 -->
+    <script>
+    var x = document.getElementById("main");
+    var y = x.getElementsByTagName("p");
+    var xx = document.getElementById("p_id");
+
+    document.write('id 为 "main" 的 div 中的第一段文本是：' + y[0].innerHTML);
+    document.write("<br>" + "<br>");
+    document.write('id 为 "main" 的 div 中的第二段文本是：' + y[1].innerHTML);
+    document.write("<br>" + "<br>");
+    document.write('id 为 "p_id" 文本是：' + xx.innerHTML);
+    </script>
+    <!-- 修改属性直接 给对象属性赋值： -->
+    <br>
+    <br>
+    <br>
+    <img id="image" src="file:///D:/python123/JS/苹果.png" />
+    <script>
+    document.write("<br>" + "<br>");
+    document.getElementById("image").src = "file:///D:/python123/JS/葡萄.png";
+    </script>
+    <p>原始图片（1.jpg）修改为卢浦大桥 2.jpg</p>
+    <br>
+    <br>
+    <br>
+    <p id="h1_test"> 样式表修改p标签案例 </p>
+    <script type="text/javascript">
+    varobj_h1 = document.getElementById("h1_test")
+    obj_h1.className = "h1style"
+    </script>
+    <h1 onclick="this.innerHTML='谢谢!'">请点击该文本</h1>
+</body>
+
+</html>
